@@ -8,9 +8,19 @@
 </head>
 <body>
   <% flash.each do |type, message| %>
-    <%= content_tag :div, message, class: "flash_#{type}"%>
+  <%= content_tag :div, message, class: "flash_#{type}"%>
   <% end %>
-<%= yield %>
+  <li>
+    <strong>Visits:</strong><%= session[:hit_counter] %>
+  </li>
+
+  <p>
+    <% unless most_recent_tool.nil? %>
+    <strong>Newest tool:</strong> <%= most_recent_tool.name %>
+    <% end %>
+  </p>
+
+  <%= yield %>
 
 </body>
 </html>
