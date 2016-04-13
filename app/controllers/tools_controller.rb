@@ -2,8 +2,6 @@ class ToolsController < ApplicationController
 
   def index
     if session[:user_id]
-    #  @user = User.find(session[:user_id])
-    #  @tools = @user.tools
      @tools = current_user.tools
    else
      @tools = Tool.all

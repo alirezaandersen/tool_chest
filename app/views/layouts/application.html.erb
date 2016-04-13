@@ -12,9 +12,9 @@
   <% flash.each do |type, message| %>
   <%= content_tag :div, message, class: "flash_#{type}"%>
   <% end %>
-  <li>
+  <!-- <li>
     <strong>Visits:</strong><%= session[:hit_counter] %>
-  </li>
+  </li> -->
 
   <p>
     <% unless most_recent_tool.nil? %>
@@ -23,7 +23,7 @@
   </p>
 
   <% if current_user %>
-   Welcome, <%= current_user.name %>
+   <!-- Welcome, <%= current_user.name %> -->
  <% end %>
 
   <%= yield %>
