@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flahs[:approve] = "Successful Login"
+      flash[:approve] = "Successful Login"
+      redirect_to user_path(@user.id)
     else
       flash[:error] = "Invalid Login"
       redirect_to login_path

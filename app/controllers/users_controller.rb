@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:save] = "User Successfully created. Please Log In"
+      render :show
     else
       flash.now[:error] = @user.errors.full_message.join(",")
       render :new
